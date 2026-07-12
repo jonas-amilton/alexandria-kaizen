@@ -8,7 +8,7 @@ Use it when you need to:
 
 - investigate production incidents or regressions;
 - find related files and candidate line numbers;
-- propose useful breakpoint or logpoint locations;
+- propose useful breakpoint or logpoint locations when evidence needs them;
 - design the smallest safe patch;
 - preserve evidence, rollback path, and operational safety;
 - record resolved-problem memory so future investigations start with prior knowledge.
@@ -114,32 +114,22 @@ Use $alexandria-kaizen to investigate this production bug with root cause, mitig
 
 ## Expected output
 
-For troubleshooting, the skill should produce sections like:
+Troubleshooting output is adaptive. It normally includes only:
 
 ```markdown
-### Context
-### Observed symptoms
-### Memory consulted
-### Related files
-### Suggested breakpoints
-### Facts
-### Hypotheses
-### Validation performed
-### Root cause
-### Immediate mitigation
-### Minimal patch
-### Proposed memory
-### Learning / promote to skill or runbook
-### Definitive fix
-### Prevention / observability
+### Conclusion
+### Evidence
+### Change or next validation
 ### Tests
 ```
+
+Context, impact, facts, hypotheses, related files, breakpoints/logpoints, mitigation, rollback, residual risk, memory, and observability appear only when material. No empty sections.
 
 ## Usage workflow
 
 1. **Frame the problem**: capture context, symptoms, impact, and success criteria.
-2. **Recall prior knowledge**: search resolved-problem memory and existing runbooks.
-3. **Investigate with evidence**: trace the flow, identify related files, and define breakpoint/logpoint candidates.
+2. **Recall prior knowledge when relevant**: search resolved-problem memory and runbooks for likely recurrence or known context.
+3. **Investigate with evidence**: use Graphify first for verifiable semantic relationships when available and current; use text search first for literal evidence; confirm both in current source.
 4. **Patch minimally**: choose the smallest safe change at the shared point.
 5. **Verify freshly**: run commands/tests now and read the output.
 6. **Capture learning**: propose memory entries only when cause, patch, rollback, and validation are known.
@@ -152,6 +142,7 @@ For troubleshooting, the skill should produce sections like:
 - Add timeout, bounded retry, fallback, idempotency, and observability only when the real risk requires them.
 - Do not use emojis in responses, templates, memory entries, commit messages, or generated documentation.
 - Do not promote every incident into a rule; promote only reusable, verified, operationally actionable learning.
+- References load only for their stated need and are not reloaded during one task.
 
 ## Maintaining the skill
 
