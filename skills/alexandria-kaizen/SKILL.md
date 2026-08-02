@@ -15,7 +15,7 @@ description: Use for maintenance, bugs, regressions, incidents, troubleshooting,
 
 ## Discovery
 
-Graph-first for semantic relationships; text-first for literal evidence. Current source and tests are the final authority.
+Graph-first for semantic relationships; text-first for literal evidence.
 
 - Verify graph freshness, coverage, and verifiable symbols vs current/uncommitted code before trusting it. Prefer it for definitions, references, callers/callees, dependencies, entrypoint-to-I/O paths, shared points, tests, and impact.
 - Treat a graph result as a candidate until current code confirms it. Fall back to text search and direct reading when stale, incomplete, conflicting, generic, or unverifiable.

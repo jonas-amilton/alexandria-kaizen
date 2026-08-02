@@ -117,35 +117,17 @@ Use $alexandria-kaizen to investigate this production bug with root cause, mitig
 
 ## Expected output
 
-Troubleshooting output is adaptive. It normally includes only:
-
-```markdown
-### Conclusion
-### Evidence
-### Change or next validation
-### Tests
-```
-
-Context, impact, facts, hypotheses, related files, breakpoints/logpoints, mitigation, rollback, residual risk, memory, and observability appear only when material. No empty sections.
+Troubleshooting output is adaptive and normally includes only `### Conclusion`, `### Evidence`, `### Change or next validation`, `### Tests`, with additional material only when it changes a decision. The full response contract, cost rules, and boilerplate mode live in `skills/alexandria-kaizen/SKILL.md`.
 
 ## Usage workflow
 
-1. **Frame the problem**: capture context, symptoms, impact, and success criteria.
-2. **Recall prior knowledge when relevant**: search resolved-problem memory and runbooks for likely recurrence or known context.
-3. **Investigate with evidence**: use Graphify first for verifiable semantic relationships when available and current; use text search first for literal evidence; confirm both in current source.
-4. **Patch minimally**: choose the smallest safe change at the shared point.
-5. **Verify freshly**: run commands/tests now and read the output.
-6. **Capture learning**: propose memory entries only when cause, patch, rollback, and validation are known.
+Six phases: frame the problem, recall prior knowledge, investigate with evidence, patch minimally, verify freshly, capture learning. Step-level rules live in `SKILL.md` (Workflow, Discovery) and in `references/` loaded on demand.
 
 ## Safety rules
 
-- Do not store secrets, tokens, sensitive payloads, unnecessary PII, or customer data in memory entries.
-- Mark inferred file lines as estimated and include the command needed to confirm them.
-- Prefer reversible mitigation before large code changes during active incidents.
-- Add timeout, bounded retry, fallback, idempotency, and observability only when the real risk requires them.
-- Do not use emojis in responses, templates, memory entries, commit messages, or generated documentation.
-- Do not promote every incident into a rule; promote only reusable, verified, operationally actionable learning.
-- References load only for their stated need and are not reloaded during one task.
+- Non-negotiables and cost rules: `SKILL.md`.
+- Ops rules (dry-run, batches, checkpoints, I/O timeout/retry, concurrency, no secrets/PII): `references/incident-response.md`.
+- Memory and learning rules (no secrets, validated-only, TTL): `references/resolved-problem-memory.md`.
 
 ## Maintaining the skill
 
