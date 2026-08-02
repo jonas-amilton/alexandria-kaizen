@@ -20,6 +20,7 @@ Graph-first for semantic relationships; text-first for literal evidence. Current
 - Treat a graph result as a candidate until current code confirms it. Fall back to text search and direct reading when stale, incomplete, conflicting, generic, or unverifiable.
 - `rg`/`grep` first for literal errors, stack frames, logs, strings, env vars, flags, config/payload fields, text-declared routes, SQL, migrations, docs, runbooks, memory, generated files.
 - Regressions: start with `git log -S`/`git diff`/`git blame` of the affected area before broad searching.
+- Recurring errors/symptoms: before investigating from scratch, run one bounded search of `memory/INDEX.md` and matching entries in this skill directory.
 - Start from one symbol, file, endpoint, or entrypoint. Keep traversal shallow (normally ≤2 hops); request paths/metadata/symbols before code; read relevant ranges only.
 - Exclude `.git`, deps, builds, caches, generated output. Bound results. Never repeat a search or use two tools for one purpose without distinct justification.
 - Large repo or deep exploration: delegate to an explore subagent; keep only its findings in context.

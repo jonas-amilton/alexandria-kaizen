@@ -18,11 +18,14 @@ Use it when you need to:
 ```text
 skills/alexandria-kaizen/
 ├── SKILL.md
-└── references/
-    ├── base-methodology.md
-    ├── incident-response.md
-    ├── minimal-patch.md
-    └── resolved-problem-memory.md
+├── references/
+│   ├── base-methodology.md
+│   ├── incident-response.md
+│   ├── minimal-patch.md
+│   └── resolved-problem-memory.md
+└── memory/
+    ├── INDEX.md
+    └── resolved-problems/
 ```
 
 ## Installation
