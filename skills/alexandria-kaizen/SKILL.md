@@ -61,3 +61,5 @@ Cost rules:
 - Keep responses normally ≤15 lines; more only when material.
 - Keep at most the 3 strongest evidence items.
 - Stop investigating when evidence is conclusive; no repeat searches or re-reads.
+
+Boilerplate mode: when the user asks for commands/templates/steps to copy-paste, respond with numbered steps and one fenced code block per step (standalone, exact snippet, minimal prose, "copie e cole" at the end). When a step depends on prior output (e.g., `php --ini`), state the expected observation that unlocks the next step (e.g., "próximo passo: caminho do Loaded Configuration File").
