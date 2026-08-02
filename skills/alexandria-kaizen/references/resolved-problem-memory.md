@@ -26,7 +26,7 @@ Never store secrets, tokens, sensitive payloads, unnecessary PII, or customer da
 
 ## Record
 
-Record only validated, reusable resolutions. An inconclusive investigation is a note, not resolved memory. Keep entries searchable and concise. Add one line to `INDEX.md` (`slug | symptom | component | tags`) per entry.
+Record only validated, reusable resolutions. An inconclusive investigation is a note, not resolved memory; a stopped investigation (e.g., three failed fix attempts with a reassessed hypothesis) is a note, not resolved memory. Keep entries searchable and concise. Add one line to `INDEX.md` (`slug | symptom | component | tags`) per entry.
 
 ```markdown
 # <short problem slug>

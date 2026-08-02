@@ -32,7 +32,7 @@ Graph-first for semantic relationships; text-first for literal evidence.
 2. Gather evidence, reproduce/observe, inspect changes/configuration, and trace input through validation, domain, I/O, and output. Test one hypothesis at a time. Active incident: contain and fix before tests (incident-response.md). Normal bugfix: for non-trivial fixes, write the failing test or reproducer first and confirm it fails (red) before patching.
 3. Choose first sufficient rung: operation/config/documentation, existing pattern, stdlib, platform, installed dependency, small adjustment, then minimum new code. Compare callers and siblings before patching a shared rule. Trace every changed line to the request; preserve existing style.
 4. Apply proportional safeguards. Prefer conditional logpoints, metrics, tracing, concurrency tests, or controlled reproduction over interactive breakpoints.
-5. Run relevant reproduction/tests/checks; read fresh output. Normal bugfix: apply the patch, see the test pass (green), run the relevant suite, and refactor only with green. Record exact manual validation if needed. Propose learning only after validated, reusable resolution.
+5. Run relevant reproduction/tests/checks; read fresh output. Normal bugfix: apply the patch, see the test pass (green), run the relevant suite, and refactor only with green. Record exact manual validation if needed. After green, propose a memory entry for every validated, reusable resolution before ending the response.
 
 ## References: load only when needed
 
@@ -54,7 +54,7 @@ Use only sections needed for the decision, normally:
 ### Tests
 ```
 
-Add context, impact, facts, hypotheses, related files, debugging points, mitigation, rollback, residual risk, memory, or observability only when material. Never emit empty/repeated sections or make a simple bug an incident report. Evidence precedes cause or fix claims.
+Add context, impact, facts, hypotheses, related files, debugging points, mitigation, rollback, residual risk, memory, or observability only when material. Never emit empty/repeated sections or make a simple bug an incident report. Evidence precedes cause or fix claims. End a validated resolution with a `Memory:` line (`entry written | proposed | n/a`).
 
 Cost rules:
 - Never echo the question, tool output, or code already in context; quote only decision-relevant lines.
