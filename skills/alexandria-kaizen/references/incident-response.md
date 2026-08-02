@@ -1,6 +1,6 @@
 # Production Incidents
 
-Load only for real or potential effect on users, data, revenue, security, SLA/SLO, or critical operations.
+Load only for real or potential effect on users, data, revenue, security, SLA/SLO, or critical operations. Single source of ops rules (destructive scripts, I/O, concurrency, logging); not restated in SKILL.md or minimal-patch.md.
 
 1. Classify impact: unavailable/incorrect behavior, affected users/tenants/regions/jobs, and data, billing, leakage, or regulatory risk.
 2. Contain with smallest reversible, observable action: rollback, flag disable, pause, rate limit, temporary block, failover, or read-only mode. Do not run destructive work without dry-run, backup, batching/checkpoints, and idempotency criteria.

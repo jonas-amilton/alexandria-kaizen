@@ -31,4 +31,4 @@ Rollback: [specific revert, flag, config, or data recovery].
 Residual risk: [only if material].
 ```
 
-For a boundary failure, validate or normalize before domain code. For a shared-rule failure, change that rule and cover reported path. For external I/O, add explicit timeout and only bounded retry backed by idempotency/deduplication. For data repair, default dry-run, process small batches with checkpoint/resume, verify reruns, and validate backup/recovery on sample.
+For a boundary failure, validate or normalize before domain code. For a shared-rule failure, change that rule and cover reported path. For external I/O, data repair, or destructive work, apply the ops rules in incident-response.md (timeout, bounded retry, dry-run, batches, checkpoint/resume, idempotency, backup validation).
