@@ -26,7 +26,7 @@ Fact: `file:line` [observed behavior].
 Hypothesis: [causal mechanism].
 Change: `path`: [minimum shared-point change].
 Safeguards: [only applicable timeout/retry/idempotency/concurrency/logging].
-Test: `exact command` [fails before; passes after].
+Test: `exact command` [fails before; passes after]. Write the failing test/reproducer first for non-trivial fixes when a suite exists; the fails-before run validates that the test captures the bug.
 Rollback: [specific revert, flag, config, or data recovery].
 Residual risk: [only if material].
 ```

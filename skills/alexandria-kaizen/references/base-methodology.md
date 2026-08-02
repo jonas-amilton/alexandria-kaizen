@@ -4,7 +4,7 @@ Load only for methodological uncertainty, competing solutions, or explanation of
 
 ## Decide with evidence
 
-State the success signal before implementation. Read actual flow, callers, environment, and tests; then test one hypothesis or variable at a time. A failing reproduction before a bug fix and fresh verification after it are stronger than a plausible diff. If evidence stops distinguishing hypotheses, gather the smallest new observation that will.
+State the success signal before implementation. Read actual flow, callers, environment, and tests; then test one hypothesis or variable at a time. A failing test or reproducer executed before the fix (red) and fresh verification after it (green) are stronger than a plausible diff; prefer an automated test when a suite exists. If evidence stops distinguishing hypotheses, gather the smallest new observation that will.
 
 ## Compare competing solutions
 

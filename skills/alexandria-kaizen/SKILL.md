@@ -10,6 +10,7 @@ description: Use for maintenance, bugs, regressions, incidents, troubleshooting,
 - Preserve validation, security, accessibility, data protection, idempotency, and concurrency. Fix shared points; validate trust boundaries.
 - Mitigate reversibly and observably. Ops rules (dry-run, batches, checkpoints, idempotency, I/O timeout/retry, concurrency, no-secrets): incident-response.md.
 - Test/reproduce before and after non-trivial patches; read fresh output/status before claims. Preserve exact evidence; mark inferred `file:line` as estimated with confirmation method. State rollback and residual risk.
+- A test that did not fail on the buggy code is not proof: capture the bug first (automated test or reproducer) and re-run after the fix. Shared-point fixes require an automated regression test; manual verification only when automated reproduction is infeasible, with justification.
 - After three failed fix attempts, stop and reassess the hypothesis or architecture.
 
 ## Discovery
@@ -28,10 +29,10 @@ Graph-first for semantic relationships; text-first for literal evidence. Current
 ## Workflow
 
 1. Frame symptom, scope, impact, success signal, and unknowns. Ask only if ambiguity blocks safety.
-2. Gather evidence, reproduce/observe, inspect changes/configuration, and trace input through validation, domain, I/O, and output. Test one hypothesis at a time.
+2. Gather evidence, reproduce/observe, inspect changes/configuration, and trace input through validation, domain, I/O, and output. Test one hypothesis at a time. Active incident: contain and fix before tests (incident-response.md). Normal bugfix: for non-trivial fixes, write the failing test or reproducer first and confirm it fails (red) before patching.
 3. Choose first sufficient rung: operation/config/documentation, existing pattern, stdlib, platform, installed dependency, small adjustment, then minimum new code. Compare callers and siblings before patching a shared rule. Trace every changed line to the request; preserve existing style.
 4. Apply proportional safeguards. Prefer conditional logpoints, metrics, tracing, concurrency tests, or controlled reproduction over interactive breakpoints.
-5. Run relevant reproduction/tests/checks. Record exact manual validation if needed. Propose learning only after validated, reusable resolution.
+5. Run relevant reproduction/tests/checks; read fresh output. Normal bugfix: apply the patch, see the test pass (green), run the relevant suite, and refactor only with green. Record exact manual validation if needed. Propose learning only after validated, reusable resolution.
 
 ## References: load only when needed
 

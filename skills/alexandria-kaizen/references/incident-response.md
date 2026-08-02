@@ -6,7 +6,7 @@ Load only for real or potential effect on users, data, revenue, security, SLA/SL
 2. Contain with smallest reversible, observable action: rollback, flag disable, pause, rate limit, temporary block, failover, or read-only mode. Do not run destructive work without dry-run, backup, batching/checkpoints, and idempotency criteria.
 3. Preserve UTC window, request/trace IDs, deploy or commit, relevant config, queue state, sampled redacted payloads, metrics, commands, queries, and evidence limits.
 4. Diagnose boundaries: client, gateway, API, service, database/cache/queue, external dependency. At each, check input/output, latency, errors, timeouts, retries, and volume.
-5. Make one primary root-cause fix, then add the smallest suitable regression test or operational detector. For external I/O, use timeout, bounded safe retry, fallback, and alert only when evidence requires them.
+5. Make one primary root-cause fix, then add the smallest suitable regression test or operational detector. Validate the regression test against the pre-fix version (stash/revert/checkout) so it demonstrably fails there; prefer the test over the detector when feasible. For external I/O, use timeout, bounded safe retry, fallback, and alert only when evidence requires them.
 6. Prevent recurrence with an owned, actionable test, constraint, validation, metric, alert, dashboard, runbook, or process change. Alerts require an owner, threshold, and expected action.
 
 Use this update only when stakeholders need it:
